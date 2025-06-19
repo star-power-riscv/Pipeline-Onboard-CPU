@@ -1,12 +1,11 @@
-# Simple RISC-V Single-Cycle CPU
+# 5-Stage Pipeline RV32 CPU
 
-This project implements a basic single-cycle CPU capable of executing 37 RISC-V instructions. The CPU supports all RV32I base integer instructions.
+This project implements a 5-stage pipeline CPU capable of executing 37 RISC-V instructions. The CPU supports all RV32I base integer instructions.
 
 ## Features
 
-- Implements a single-cycle CPU architecture
+- Implements a 5-stage pipeline CPU architecture
 - Supports 37 RISC-V RV32I instructions
-- Designed for educational and experimental purposes
 - Synthesizable and tested on FPGA
 
 ## Instruction Set
@@ -20,7 +19,7 @@ All supported RV32I instructions are shown in the following image:
 To operate on an FPGA board, you should
 The CPU has been synthesized and successfully run on an FPGA board. The operation results are shown below:
 
-![FPGA Operation Result](/Image/operation.png)
+![FPGA Operation Result](/Image/pipeline_operation.png)
 
 ## Getting Started
 
