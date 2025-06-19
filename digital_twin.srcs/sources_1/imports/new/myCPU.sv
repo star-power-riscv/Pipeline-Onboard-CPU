@@ -8,11 +8,11 @@ module myCPU (
     output logic [31:0] irom_addr,           // IROM读地址, 16->12
     
     // Interface to DRAM
-    input  logic [31:0] dram_rdata,          // DRAM读数据
-    output logic [31:0] dram_addr,           // DRAM地址, 16->32
-    output logic [31:0] dram_wdata,          // DRAM写数据
-    output logic        dram_we,             // DRAM写使能
-    output logic [2:0]  dram_mask            // DRAM写掩码
+    input  logic [31:0] perip_rdata,          // DRAM读数据
+    output logic [31:0] perip_addr,           // DRAM地址, 16->32
+    output logic [31:0] perip_wdata,          // DRAM写数据
+    output logic        perip_wen,             // DRAM写使能
+    output logic [2:0]  perip_mask            // DRAM写掩码
 );
     logic stall;    
     logic flush;
@@ -257,11 +257,11 @@ module myCPU (
         .opcode(mem_stage_opcode),
         .funct3(mem_stage_funct3),
         .funct7(mem_stage_funct7),
-        .dmem_rdata(dram_rdata),
-        .dmem_addr(dram_addr),
-        .dmem_wdata(dram_wdata),
-        .dmem_we(dram_we),
-        .dmem_mask(dram_mask),
+        .perip_rdata(perip_rdata),
+        .perip_addr(perip_addr),
+        .perip_wdata(perip_wdata),
+        .perip_wen(perip_wen),
+        .perip_mask(perip_mask),
         .mem_result(mem_stage_mem_result),
         .rd_address_out(mem_stage_rd_address_out),
         .reg_write_en_out(mem_stage_reg_write_en_out),
