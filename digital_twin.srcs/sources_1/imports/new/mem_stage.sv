@@ -95,6 +95,7 @@ module mem_stage (
                 endcase
             end
             default: begin // 其他指令
+                mem_result = alu_result;
                 perip_mask = 3'b000; // 默认不与DMEM交互
                 perip_addr = 32'd0;
                 perip_wdata = 32'd0;

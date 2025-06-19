@@ -58,11 +58,11 @@ module student_top#(
         .irom_rdata          (instruction),   
 
         // Interface to DRAM & periphera
-        .dram_addr         (perip_addr),     
-        .dram_we           (perip_wen),     
-        .dram_mask         (perip_mask),   
-        .dram_wdata        (perip_wdata),    
-        .dram_rdata        (perip_rdata)     
+        .perip_addr         (perip_addr),     
+        .perip_wen           (perip_wen),     
+        .perip_mask         (perip_mask),   
+        .perip_wdata        (perip_wdata),    
+        .perip_rdata        (perip_rdata)     
     );
 
     IROM Mem_IROM (
