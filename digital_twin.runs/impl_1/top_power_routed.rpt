@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Thu Jun 19 14:04:23 2025
-| Host             : BoxSaver running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date             : Thu Jun 19 17:55:38 2025
+| Host             : ubuntu running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7k325tffg900-2
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.435        |
+| Total On-Chip Power (W)  | 0.598        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.272        |
-| Device Static (W)        | 0.163        |
+| Dynamic (W)              | 0.434        |
+| Device Static (W)        | 0.164        |
 | Effective TJA (C/W)      | 1.8          |
-| Max Ambient (C)          | 84.2         |
-| Junction Temperature (C) | 25.8         |
+| Max Ambient (C)          | 83.9         |
+| Junction Temperature (C) | 26.1         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.029 |        6 |       --- |             --- |
-| Slice Logic              |     0.090 |    76743 |       --- |             --- |
-|   LUT as Distributed RAM |     0.068 |    32768 |     64000 |           51.20 |
-|   LUT as Logic           |     0.014 |    12408 |    203800 |            6.09 |
-|   F7/F8 Muxes            |     0.008 |    27032 |    203800 |           13.26 |
+| Clocks                   |     0.065 |        6 |       --- |             --- |
+| Slice Logic              |     0.165 |    77171 |       --- |             --- |
+|   LUT as Distributed RAM |     0.122 |    32768 |     64000 |           51.20 |
+|   LUT as Logic           |     0.028 |    12441 |    203800 |            6.10 |
+|   F7/F8 Muxes            |     0.015 |    27032 |    203800 |           13.26 |
 |   CARRY4                 |    <0.001 |      107 |     50950 |            0.21 |
-|   Register               |    <0.001 |     1880 |    407600 |            0.46 |
+|   Register               |    <0.001 |     2269 |    407600 |            0.56 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   Others                 |     0.000 |       16 |       --- |             --- |
-| Signals                  |     0.051 |    22121 |       --- |             --- |
-| PLL                      |     0.097 |        1 |        10 |           10.00 |
-| I/O                      |     0.004 |       76 |       500 |           15.20 |
-| Static Power             |     0.163 |          |           |                 |
-| Total                    |     0.435 |          |           |                 |
+| Signals                  |     0.090 |    22555 |       --- |             --- |
+| PLL                      |     0.109 |        1 |        10 |           10.00 |
+| I/O                      |     0.005 |       76 |       500 |           15.20 |
+| Static Power             |     0.164 |          |           |                 |
+| Total                    |     0.598 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,8 +75,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.249 |       0.179 |      0.069 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.080 |       0.051 |      0.028 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.401 |       0.330 |      0.070 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.085 |       0.057 |      0.028 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
@@ -133,7 +133,7 @@ Table of Contents
 | Clock        | Domain                     | Constraint (ns) |
 +--------------+----------------------------+-----------------+
 | clk_out1_pll | pll_inst/inst/clk_out1_pll |            20.0 |
-| clk_out2_pll | pll_inst/inst/clk_out2_pll |            20.0 |
+| clk_out2_pll | pll_inst/inst/clk_out2_pll |             9.5 |
 | clkfbout_pll | pll_inst/inst/clkfbout_pll |            20.0 |
 | i_sys_clk_p  | i_sys_clk_p                |             5.0 |
 +--------------+----------------------------+-----------------+
@@ -148,18 +148,18 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| top                    |     0.272 |
-|   pll_inst             |     0.101 |
-|     inst               |     0.101 |
-|   student_top_inst     |     0.169 |
-|     Core_cpu           |     0.025 |
-|       ex_stage         |     0.001 |
-|       if_stage         |     0.004 |
-|       reg_file         |     0.001 |
-|     Mem_IROM           |     0.006 |
-|       U0               |     0.006 |
-|     bridge_inst        |     0.138 |
-|       dram_driver_inst |     0.138 |
+| top                    |     0.434 |
+|   pll_inst             |     0.113 |
+|     inst               |     0.113 |
+|   student_top_inst     |     0.318 |
+|     Core_cpu           |     0.053 |
+|       ex_stage         |     0.002 |
+|       if_stage         |     0.009 |
+|       reg_file         |     0.003 |
+|     Mem_IROM           |     0.013 |
+|       U0               |     0.013 |
+|     bridge_inst        |     0.252 |
+|       dram_driver_inst |     0.251 |
 +------------------------+-----------+
 
 

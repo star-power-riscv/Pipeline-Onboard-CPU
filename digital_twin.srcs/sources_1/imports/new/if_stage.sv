@@ -20,7 +20,7 @@ module if_stage (
 
     always_ff @( posedge clk ) begin
         if (reset) begin
-            pc_reg <= 32'h0000_0000;
+            pc_reg <= 32'h8000_0000;
         end else if (!stall) begin
             if (pc_branch_valid) begin
                 pc_reg <= pc_address_in + 4;

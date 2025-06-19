@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/Simple-RISCV-CPU/digital_twin.runs/impl_1/top.tcl"
+  variable script "/home/easton/Pipeline-Onboard-CPU/digital_twin.runs/impl_1/top.tcl"
   variable category "vivado_impl"
 }
 
@@ -126,29 +126,28 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
-  set_param chipscope.maxJobs 5
-  set_param synth.incrementalSynthesisCache C:/Users/86133/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-44872-BoxSaver/incrSyn
+  set_param chipscope.maxJobs 2
   set_param xicom.use_bs_reader 1
-  set_param runs.launchOptions { -jobs 10  }
+  set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7k325tffg900-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir D:/Simple-RISCV-CPU/digital_twin.cache/wt [current_project]
-  set_property parent.project_path D:/Simple-RISCV-CPU/digital_twin.xpr [current_project]
-  set_property ip_output_repo D:/Simple-RISCV-CPU/digital_twin.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/easton/Pipeline-Onboard-CPU/digital_twin.cache/wt [current_project]
+  set_property parent.project_path /home/easton/Pipeline-Onboard-CPU/digital_twin.xpr [current_project]
+  set_property ip_output_repo /home/easton/Pipeline-Onboard-CPU/digital_twin.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/top.dcp
-  read_ip -quiet D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/ip/pll_1/pll.xci
-  read_ip -quiet D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/ip/IROM/IROM.xci
-  read_ip -quiet D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/ip/DRAM/DRAM.xci
+  add_files -quiet /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/synth_1/top.dcp
+  read_ip -quiet /home/easton/Pipeline-Onboard-CPU/digital_twin.srcs/sources_1/ip/IROM/IROM.xci
+  read_ip -quiet /home/easton/Pipeline-Onboard-CPU/digital_twin.srcs/sources_1/ip/DRAM/DRAM.xci
+  read_ip -quiet /home/easton/Pipeline-Onboard-CPU/digital_twin.srcs/sources_1/ip/pll_1/pll.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc D:/Simple-RISCV-CPU/digital_twin.srcs/constrs_1/new/digital_twin.xdc
+  read_xdc /home/easton/Pipeline-Onboard-CPU/digital_twin.srcs/constrs_1/new/digital_twin.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

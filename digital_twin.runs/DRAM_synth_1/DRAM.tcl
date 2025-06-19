@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM.tcl"
+  variable script "/home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,8 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "DRAM_synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 5
-set_param synth.incrementalSynthesisCache C:/Users/86133/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-44872-BoxSaver/incrSyn
+set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -86,17 +85,17 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/Simple-RISCV-CPU/digital_twin.cache/wt [current_project]
-set_property parent.project_path D:/Simple-RISCV-CPU/digital_twin.xpr [current_project]
+set_property webtalk.parent_dir /home/easton/Pipeline-Onboard-CPU/digital_twin.cache/wt [current_project]
+set_property parent.project_path /home/easton/Pipeline-Onboard-CPU/digital_twin.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Simple-RISCV-CPU/digital_twin.cache/ip [current_project]
+set_property ip_output_repo /home/easton/Pipeline-Onboard-CPU/digital_twin.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/ip/DRAM/DRAM.xci
-set_property used_in_implementation false [get_files -all d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_ooc.xdc]
+read_ip -quiet /home/easton/Pipeline-Onboard-CPU/digital_twin.srcs/sources_1/ip/DRAM/DRAM.xci
+set_property used_in_implementation false [get_files -all /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -112,7 +111,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1 -new_name DRAM -ip [get_ips DRAM]]
+set cacheID [config_ip_cache -export -no_bom  -dir /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1 -new_name DRAM -ip [get_ips DRAM]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
@@ -167,32 +166,32 @@ create_report "DRAM_synth_1_synth_report_utilization_0" "report_utilization -fil
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM.dcp d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM.dcp
+  file copy -force /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM.dcp /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.v
+  write_verilog -force -mode synth_stub /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.v
+  write_verilog -force -mode funcsim /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -202,32 +201,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM.dcp d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM.dcp
+  file copy -force /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM.dcp /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM_stub.v d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.v
+  file rename -force /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM_stub.v /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM_stub.vhdl d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.vhdl
+  file rename -force /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM_stub.vhdl /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM_sim_netlist.v d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.v
+  file rename -force /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM_sim_netlist.v /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Simple-RISCV-CPU/digital_twin.runs/DRAM_synth_1/DRAM_sim_netlist.vhdl d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.vhdl
+  file rename -force /home/easton/Pipeline-Onboard-CPU/digital_twin.runs/DRAM_synth_1/DRAM_sim_netlist.vhdl /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -235,15 +234,15 @@ if { [catch {
 close [open .end.used_ip_cache.rst w]
 }; # end if cacheID 
 
-if {[file isdir D:/Simple-RISCV-CPU/digital_twin.ip_user_files/ip/DRAM]} {
+if {[file isdir /home/easton/Pipeline-Onboard-CPU/digital_twin.ip_user_files/ip/DRAM]} {
   catch { 
-    file copy -force d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.v D:/Simple-RISCV-CPU/digital_twin.ip_user_files/ip/DRAM
+    file copy -force /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.v /home/easton/Pipeline-Onboard-CPU/digital_twin.ip_user_files/ip/DRAM
   }
 }
 
-if {[file isdir D:/Simple-RISCV-CPU/digital_twin.ip_user_files/ip/DRAM]} {
+if {[file isdir /home/easton/Pipeline-Onboard-CPU/digital_twin.ip_user_files/ip/DRAM]} {
   catch { 
-    file copy -force d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.vhdl D:/Simple-RISCV-CPU/digital_twin.ip_user_files/ip/DRAM
+    file copy -force /home/easton/Pipeline-Onboard-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM_stub.vhdl /home/easton/Pipeline-Onboard-CPU/digital_twin.ip_user_files/ip/DRAM
   }
 }
 file delete __synthesis_is_running__
