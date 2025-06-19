@@ -67,6 +67,7 @@ module mem_stage (
                     end
                     default: begin
                         perip_mask = 3'b000;
+                        perip_addr = 32'd0;
                         mem_result = 32'd0;
                     end
                 endcase
@@ -90,6 +91,7 @@ module mem_stage (
                     end
                     default: begin
                         perip_mask = 3'b000;
+                        perip_addr = 32'd0;
                         perip_wdata = 32'd0;
                     end
                 endcase
