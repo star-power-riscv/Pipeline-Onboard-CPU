@@ -1,0 +1,397 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Jun 19 13:39:31 2025
+# Process ID: 40712
+# Current directory: D:/Simple-RISCV-CPU/digital_twin.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/top.vds
+# Journal file: D:/Simple-RISCV-CPU/digital_twin.runs/synth_1\vivado.jou
+# Running On: BoxSaver, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 16890 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 582.684 ; gain = 183.309
+Command: read_checkpoint -auto_incremental -incremental D:/Simple-RISCV-CPU/digital_twin.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Simple-RISCV-CPU/digital_twin.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7k325tffg900-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 35468
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 1489.992 ; gain = 441.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'regfile_rs1_data', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:93]
+INFO: [Synth 8-11241] undeclared symbol 'regfile_rs2_data', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:94]
+INFO: [Synth 8-11241] undeclared symbol 'ex_stage_rd_address_out', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:106]
+INFO: [Synth 8-11241] undeclared symbol 'ex_stage_alu_result', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:107]
+INFO: [Synth 8-11241] undeclared symbol 'ex_stage_load_en', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:108]
+INFO: [Synth 8-11241] undeclared symbol 'mem_stage_rd_address_out', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:109]
+INFO: [Synth 8-11241] undeclared symbol 'mem_stage_mem_result', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:110]
+INFO: [Synth 8-11241] undeclared symbol 'wb_stage_rd_address', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:111]
+INFO: [Synth 8-11241] undeclared symbol 'wb_stage_mem_result', assumed default net type 'wire' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:112]
+WARNING: [Synth 8-8895] 'ex_stage_load_en' is already implicitly declared on line 108 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:122]
+WARNING: [Synth 8-8895] 'ex_stage_alu_result' is already implicitly declared on line 107 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:127]
+WARNING: [Synth 8-8895] 'ex_stage_rd_address_out' is already implicitly declared on line 106 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:129]
+WARNING: [Synth 8-8895] 'mem_stage_mem_result' is already implicitly declared on line 110 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:219]
+WARNING: [Synth 8-8895] 'mem_stage_rd_address_out' is already implicitly declared on line 109 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:220]
+WARNING: [Synth 8-8895] 'wb_stage_mem_result' is already implicitly declared on line 112 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:272]
+WARNING: [Synth 8-8895] 'wb_stage_rd_address' is already implicitly declared on line 111 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:273]
+WARNING: [Synth 8-8895] 'regfile_rs1_data' is already implicitly declared on line 93 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:310]
+WARNING: [Synth 8-8895] 'regfile_rs2_data' is already implicitly declared on line 94 [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:311]
+WARNING: [Synth 8-6901] identifier 'ex_stage_pc_branch_valid' is used before its declaration [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:23]
+WARNING: [Synth 8-6901] identifier 'ex_stage_pc_branch_target' is used before its declaration [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:36]
+WARNING: [Synth 8-6901] identifier 'ex_stage_pc_branch_valid' is used before its declaration [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:37]
+WARNING: [Synth 8-6901] identifier 'ex_stage_pc_branch_valid' is used before its declaration [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:76]
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'pll' [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/.Xil/Vivado-40712-BoxSaver/realtime/pll_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pll' (0#1) [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/.Xil/Vivado-40712-BoxSaver/realtime/pll_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'uart' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/uart.sv:22]
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter BAUD_RATE bound to: 9600 - type: integer 
+INFO: [Synth 8-226] default block is never used [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/uart.sv:72]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/uart.sv:147]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/uart.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'twin_controller' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/twin_controller.sv:23]
+INFO: [Synth 8-226] default block is never used [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/twin_controller.sv:64]
+INFO: [Synth 8-6155] done synthesizing module 'twin_controller' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/twin_controller.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'student_top' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/student_top.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'myCPU' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'if_stage' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/if_stage.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'if_stage' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/if_stage.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'id_stage' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/id_stage.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'id_stage' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/id_stage.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ex_stage' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:9]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:51]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:54]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:71]
+INFO: [Synth 8-226] default block is never used [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:71]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:116]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:126]
+INFO: [Synth 8-6155] done synthesizing module 'ex_stage' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/ex_stage.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'mem_stage' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/mem_stage.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'mem_stage' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/mem_stage.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'wb_stage' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/wb_stage.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'wb_stage' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/wb_stage.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/reg_file.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/reg_file.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'myCPU' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'IROM' [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/.Xil/Vivado-40712-BoxSaver/realtime/IROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'IROM' (0#1) [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/.Xil/Vivado-40712-BoxSaver/realtime/IROM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'perip_bridge' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/perip_bridge.sv:22]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/perip_bridge.sv:56]
+INFO: [Synth 8-6157] synthesizing module 'display_seg' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/display_seg.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'seg7' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/seg7.sv:23]
+INFO: [Synth 8-226] default block is never used [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/seg7.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'seg7' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/seg7.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'display_seg' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/display_seg.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'dram_driver' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/dram_driver.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'DRAM' [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/.Xil/Vivado-40712-BoxSaver/realtime/DRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DRAM' (0#1) [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/.Xil/Vivado-40712-BoxSaver/realtime/DRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dram_driver' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/dram_driver.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'counter' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/counter.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/counter.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'perip_bridge' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/perip_bridge.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'student_top' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/student_top.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/new/top.sv:23]
+WARNING: [Synth 8-87] always_comb on 'mem_result_reg' did not result in combinational logic [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/mem_stage.sv:89]
+WARNING: [Synth 8-7137] Register mem_stage_opcode_reg in module myCPU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/myCPU.sv:243]
+WARNING: [Synth 8-7129] Port funct7[6] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[5] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[4] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[3] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[2] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[1] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[0] in module mem_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module id_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module id_stage is either unconnected or has no load
+WARNING: [Synth 8-7129] Port stall in module id_stage is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:20 . Memory (MB): peak = 1609.879 ; gain = 560.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:20 . Memory (MB): peak = 1609.879 ; gain = 560.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:20 . Memory (MB): peak = 1609.879 ; gain = 560.980
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1609.879 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/pll/pll/pll_in_context.xdc] for cell 'pll_inst'
+Finished Parsing XDC File [d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/pll/pll/pll_in_context.xdc] for cell 'pll_inst'
+Parsing XDC File [d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/IROM/IROM/IROM_in_context.xdc] for cell 'student_top_inst/Mem_IROM'
+Finished Parsing XDC File [d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/IROM/IROM/IROM_in_context.xdc] for cell 'student_top_inst/Mem_IROM'
+Parsing XDC File [d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM/DRAM_in_context.xdc] for cell 'student_top_inst/bridge_inst/dram_driver_inst/Mem_DRAM'
+Finished Parsing XDC File [d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/DRAM/DRAM/DRAM_in_context.xdc] for cell 'student_top_inst/bridge_inst/dram_driver_inst/Mem_DRAM'
+Parsing XDC File [D:/Simple-RISCV-CPU/digital_twin.srcs/constrs_1/new/digital_twin.xdc]
+Finished Parsing XDC File [D:/Simple-RISCV-CPU/digital_twin.srcs/constrs_1/new/digital_twin.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Simple-RISCV-CPU/digital_twin.srcs/constrs_1/new/digital_twin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1711.746 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1711.746 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:47 . Memory (MB): peak = 1711.746 ; gain = 662.848
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:47 . Memory (MB): peak = 1711.746 ; gain = 662.848
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for i_sys_clk_n. (constraint file  d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/pll/pll/pll_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_sys_clk_n. (constraint file  d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/pll/pll/pll_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for i_sys_clk_p. (constraint file  d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/pll/pll/pll_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_sys_clk_p. (constraint file  d:/Simple-RISCV-CPU/digital_twin.gen/sources_1/ip/pll/pll/pll_in_context.xdc, line 7).
+Applied set_property KEEP_HIERARCHY = SOFT for pll_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for student_top_inst/Mem_IROM. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for student_top_inst/bridge_inst/dram_driver_inst/Mem_DRAM. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:47 . Memory (MB): peak = 1711.746 ; gain = 662.848
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'rx_state_reg' in module 'uart'
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'uart'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                 iSTATE1 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'sequential' in module 'uart'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                                0 |                             0000
+                 iSTATE0 |                                1 |                             0001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'uart'
+WARNING: [Synth 8-327] inferring latch for variable 'mem_result_reg' [D:/Simple-RISCV-CPU/digital_twin.srcs/sources_1/imports/new/mem_stage.sv:89]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:49 . Memory (MB): peak = 1711.746 ; gain = 662.848
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 7     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 46    
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 22    
+	                7 Bit    Registers := 4     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 19    
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 24    
+	   6 Input   32 Bit        Muxes := 1     
+	  11 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 4     
+	   4 Input   13 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 4     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 5     
+	   9 Input    3 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 57    
+	   4 Input    1 Bit        Muxes := 7     
+	   3 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:01:29 . Memory (MB): peak = 1715.395 ; gain = 666.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:01:42 . Memory (MB): peak = 1715.395 ; gain = 666.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:02:14 . Memory (MB): peak = 1954.160 ; gain = 905.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:02:17 . Memory (MB): peak = 1954.160 ; gain = 905.262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:02:24 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:02:24 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:02:25 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:02:25 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:02:25 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:02:25 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |pll           |         1|
+|2     |IROM          |         1|
+|3     |DRAM          |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |DRAM   |     1|
+|2     |IROM   |     1|
+|3     |pll    |     1|
+|4     |BUFG   |     1|
+|5     |CARRY4 |   107|
+|6     |LUT1   |     7|
+|7     |LUT2   |   335|
+|8     |LUT3   |   144|
+|9     |LUT4   |   435|
+|10    |LUT5   |   492|
+|11    |LUT6   |  1458|
+|12    |MUXF7  |   272|
+|13    |MUXF8  |     8|
+|14    |FDCE   |   658|
+|15    |FDPE   |    14|
+|16    |FDRE   |  1144|
+|17    |LD     |    32|
+|18    |IBUF   |     1|
+|19    |OBUF   |    73|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:02:25 . Memory (MB): peak = 1955.527 ; gain = 906.629
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:02:16 . Memory (MB): peak = 1955.527 ; gain = 804.762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:02:25 . Memory (MB): peak = 1955.527 ; gain = 906.629
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 1967.629 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 419 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1979.254 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  LD => LDCE: 32 instances
+
+Synth Design complete | Checksum: 19c22ac9
+INFO: [Common 17-83] Releasing license: Synthesis
+83 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:02:44 . Memory (MB): peak = 1979.254 ; gain = 1381.340
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1979.254 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Simple-RISCV-CPU/digital_twin.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 19 13:42:50 2025...
